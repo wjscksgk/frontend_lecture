@@ -1,0 +1,25 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+.parent{
+  width: 400px;
+  background-color: #efefef;
+  overflow: hidden;
+}
+.child{
+  /* width: 200px; */
+  height: 200px;
+  text-align: center;
+  line-height: 200px;
+  float: left;
+}
+.red{
+  background-color: red;
+}
+.yellow{
+  background-color: yellow;
+}
+.blue{
+  background-color: blue;
+}
