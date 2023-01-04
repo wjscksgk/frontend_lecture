@@ -1,0 +1,47 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+.box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  font-size: 40px;
+  background-color: #ff4949;
+  color: white;
+}
+.box::after{
+  content: "Mobile";
+}
+
+/* Mobile 가로화면 반응형 */
+@media screen and (min-width:480px){
+  .box{
+    background-color: #fdd76f;
+  }
+  .box::after{
+    content: "가로화면 Mobile";
+  }
+}
+
+/* Tablet */
+@media screen and (min-width:768px){
+  .box{
+    background-color: aquamarine;
+  }
+  .box::after{
+    content: "Tablet";
+  }
+}
+
+/* Desktop */
+@media screen and (min-width:1280px){
+  .box{
+    background-color: cornflowerblue;
+  }
+  .box::after{
+    content: "Desktop";
+  }
+}
