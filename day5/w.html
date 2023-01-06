@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h1>입력</h1>
+  <input type="text" id="user-input">
+  <button>클릭</button>
+  
+  <script>
+
+    const inputElement = document.querySelector("#user-input");
+    const btnElement = document.querySelector("button");
+    const h1Element = document.querySelector("h1");
+
+    const inputEvent = () => {
+      if(inputElement.value.trim() === ""){
+        h1Element.innerHTML="Default Title";
+      }else{
+        h1Element.innerHTML=inputElement.value;
+        inputElement.value="";
+      }
+    }
+
+    // 버튼이 클릭됬을 때! input요소의 값을 받아오려고 함
+    btnElement.addEventListener("click", () => inputEvent());
+    inputElement.addEventListener("keydown", e => { if( e.key === "Enter" ) inputEvent() })
+
+  </script>
+</body>
+</html>
