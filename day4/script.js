@@ -258,15 +258,18 @@ originArr.push("newValue1")
 originArr.push("newValue2")
 originArr.push("newValue3")
 
+
+
+
+
+
+
+
 const price = ["2000", "1000", "3000", "5000", "4000"]
 
-const newPrice = []
 function getWonPrice1(priceList) {
+  const newPrice = []
   for(let i=0; i<priceList.length; i++) {
-    // price[i]
-    // if 천원이 넘는가?
-    // 문자열 뒤에 뭔 글자를 붙여줌
-    // newPrice.push(_____);
     if ( Number( priceList[i] ) > 1000 ) {
       newPrice.push( priceList[i] + "원" );
     }
@@ -275,10 +278,18 @@ function getWonPrice1(priceList) {
 }
 console.log(getWonPrice1(price))
 
+const price2 = ["2000", "1000", "100000", "3000", "5000", "4000"]
+
 function getWonPrice(priceList) {
-  // filter : callbackFn (천원이 넘는가 true false)
-  // sort : callbackFn (더 큰 요소가 뒤로 가도록 오름차순)
-  // map : callbackFn (문자열 "원"을 이어붙여주기)
-  return newPrice;
+
+  // const over1000List = priceList.filter((price) => Number(price) > 1000)
+  // const sortedList = over1000List.sort((a,b) => a-b)
+  // const result = sortedList.map((data) => data + "원")
+  // return result;
+
+  return priceList
+    .filter((price) => Number(price) > 1000)
+    .sort((a,b) => a-b)
+    .map((data) => data + "원")
 }
-console.log(getWonPrice(price))
+console.log(getWonPrice(price2))
